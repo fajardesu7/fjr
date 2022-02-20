@@ -1,0 +1,63 @@
+login mysql
+mysql -u root -p
+Create New Database
+CREATE DATABASE database_name;
+Perview Database
+SHOW DATABASES;
+output
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| database_name 
+| dwi_db    |
+| mysql              |
+| performance_schema |
+| test               |
++--------------------+
+5 rows in set (0.00 sec)
+Saat Anda membuat database, database baru tidak dipilih untuk digunakan.
+Untuk memilih database sebelum Anda memulai sesi MySQL, gunakan pernyataan berikut:
+USE database_name;
+untuk menghubungkan cintaku padanya
+mysql -u root -p database_name
+untuk create user
+CREATE USER 'admin'@'localhost' IDENTIFIED BY 'root123';GRANT ALL PRIVILEGES ON * . * TO 'admin'@'localhost';
+FLUSH PRIVILEGES;
+tampilkan tipe hak akses
+SHOW GRANTS FOR 'user_name'@'localhost';
+Akses MySQL RDS dari EC2 Instance
+Untuk mengakses MySQL RDS dari EC2 Instance kita harus install MySQL Client terlebih dahulu
+
+sudo apt-get update
+sudo apt-get install mysql-client
+Kemudian gunakan perintah berikut
+
+mysql -h <namadatabase> -u <username> -p
+Sehingga masukkan perintah berikut dan masukkan passwordnya
+
+mysql -h database-one.cjvkidlauxqr.us-east-1.rds.amazonaws.com -u admin -p
+car akses mysql rds dari ec2
+Ketik perintah dibawah untuk melihat semua database yang berada di MySQL RDS dan buat database baru
+
+show databases;
+create database kampus;
+Setelah itu kita bisa gunakan perintah DDL dan DML untuk menulis dan membaca data dari MySQL RDS
+
+Perintah DDL di MySQL
+CREATE -> Membuat database
+ALTER -> Merubah struktur database
+TRUNCATE -> Menghapus semua record di database
+DROP -> Menghapus table/database
+RENAME -> Merubah nama table
+Membuat Table
+Database berisi table untuk menyimpan entitas. Table terdiri dari field (kolom) dan record (baris data). Perintah CREATE digunakan untuk membuat table
+
+CREATE TABLE nama_table
+(
+    field1 tipe_data,
+    field2 tipe_data,
+    field3 tipe_data
+)
+
+Perintah DML di MySQL
